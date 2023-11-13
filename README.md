@@ -19,7 +19,8 @@
 
 Visualização de Vagas: O usuário podem consultar as vagas cadastradas na aba "Home".
 
-![image](https://github.com/RafaelaRomin/BlazorApplicationJobs/assets/124751861/3493fc42-0c19-43b3-b308-65a3c9f797f6)
+![image](https://github.com/RafaelaRomin/BlazorApplicationJobs/assets/124751861/156a701f-94bf-4c12-81e7-089fb6fba71d)
+
 
 Aplicação para Vagas: Os candidatos podem se candidatar a vagas diretamente pela plataforma, enviando suas informações e currículos para consideração.
 
