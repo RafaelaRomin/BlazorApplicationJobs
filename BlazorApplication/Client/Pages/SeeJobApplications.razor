@@ -1,0 +1,45 @@
+﻿@page "/job-applications"
+@using BlazorApplication.Shared.Models;
+@using BlazorApplication.Shared.Models.ViewModels;
+@inject HttpClient HttpClient;
+
+<PageTitle>Suas Inscrições em Vagas</PageTitle>
+
+<h1>Suas Inscrições em Vagas</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Título</td>
+            <td>Empresa</td>
+            <td>Localização</td>
+            <td>Salário</td>
+            <td>Data de Inscrição</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var jobApplication in model)
+        {
+            if (jobApplication is not null)
+            {
+                <tr>
+                    <td>@jobApplication.Title</td>
+                    <td>@jobApplication.Company</td>
+                    <td>@jobApplication.Location</td>
+                    <td>@jobApplication.Salary</td>
+                    <td>@jobApplication.AppliedAt</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@code {
+    private List<JobApplicationViewModel> model = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        model = await HttpClient.GetFromJsonAsync<List<JobApplicationViewModel>>("api/jobs/applications");
+    }
+}
